@@ -2,17 +2,17 @@
 
 Контакт - telegram @aemirov
 
-Докерфайл:
+Сборка докера:
 ``` 
 cd src/mmsegmentation/docker
 docker build . -t hack
 ```
-Запуск докерфайла:
+Запуск докера:
 ```
 docker run -u $(id -u):$(id -g) --shm-size 32G --gpus '"device=0"' --log-driver=none -v /etc/passwd:/etc/passwd -v /path/to/code/:/mmsegmentation/ -it hack /bin/bash
 ```
 
-Настройка среды внутри докерфайла:
+Настройка среды внутри докера:
 ```
 cd src/mmsegmentation/
 ./set.sh
