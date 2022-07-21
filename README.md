@@ -41,11 +41,10 @@ cd src/mmsegmentation/
 Тестирование:
 ```
 python3 tools/test.py configs/mine/upernet_convnext_xlarge_trains.py work_dirs/upernet_convnext_xlarge_trains/best_mIoU_iter_SOME_ITER.pth --opacity 1 --show-dir work_dirs/upernet_convnext_xlarge_trains/pred_maps_trains_tta
-python3 tools/test.py configs/mine/upernet_convnext_xlarge_trains.py work_dirs/upernet_convnext_xlarge_rails/best_mIoU_iter_SOME_ITER.pth --opacity 1 --show-dir work_dirs/upernet_convnext_xlarge_rails/pred_maps_rails_tta
+python3 tools/test.py configs/mine/upernet_convnext_xlarge_rails.py work_dirs/upernet_convnext_xlarge_rails/best_mIoU_iter_SOME_ITER.pth --opacity 1 --show-dir work_dirs/upernet_convnext_xlarge_rails/pred_maps_rails_tta
 ```
 
 Объединение предсказаний и подготовка архива:
 ```
 python3 postprocess_merge.py
-```
 ```
