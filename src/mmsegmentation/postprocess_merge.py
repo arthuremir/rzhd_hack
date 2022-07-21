@@ -7,10 +7,10 @@ import shutil
 from tqdm import tqdm
 import os
 
-imgs_trains = sorted(glob('work_dirs/upernet_convnext_xlarge_trains/pred_maps_144500_tta_v6/*'))
-imgs_rails = sorted(glob('work_dirs/upernet_convnext_xlarge_rails/pred_maps_136000_tta_v2_augs_from_train/*'))
+imgs_trains = sorted(glob('work_dirs/upernet_convnext_xlarge_trains/pred_maps_trains_tta/*'))
+imgs_rails = sorted(glob('work_dirs/upernet_convnext_xlarge_rails/pred_maps_rails_tta/*'))
 
-save_dir = 'work_dirs/upernet_convnext_xlarge_trains/final/'
+save_dir = 'final_predict/'
 os.makedirs(save_dir, exist_ok=True)
 
 for img_trains, img_rails in tqdm(zip(imgs_trains, imgs_rails)):
@@ -27,4 +27,4 @@ for img_trains, img_rails in tqdm(zip(imgs_trains, imgs_rails)):
 
     cv2.imwrite(save_dir + img_trains.split('/')[-1], im)
     
-shutil.make_archive('work_dirs/upernet_convnext_xlarge_trains/final_zip ', 'zip', save_dir)
+shutil.make_archive('solution', 'zip', save_dir)
