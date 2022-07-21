@@ -1,5 +1,7 @@
 # rzhd_hack
 
+Контакт - telegram @aemirov
+
 Докерфайл:
 ``` 
 cd src/mmsegmentation/docker
