@@ -8,6 +8,7 @@ import imagesize
 import cv2
 
 img_list = glob('data/train/mask/*')
+print(len(img_list))
 
 for path in tqdm(img_list):
     
@@ -17,11 +18,9 @@ for path in tqdm(img_list):
     mask[mask == 7] = 2
     mask[mask == 10] = 3
     
-    cv2.imwrite(path, mask)
-    
     mask_path = path.replace('images/', 'mask/').replace('data', 'data_prepared')
     os.makedirs('/'.join(mask_path.split('/')[:-1]), exist_ok=True)
-    mask.save(mask_path)
+    cv2.imwrite(mask_path, mask)
     
     img_path = path.replace('data', 'data_prepared').replace('.png', '.jpg')
     os.makedirs('/'.join(img_path.split('/')[:-1]), exist_ok=True)
